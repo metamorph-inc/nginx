@@ -17,7 +17,7 @@ apt-get build-dep -y nginx
 
 git clone https://github.com/evanmiller/mod_zip.git mod_zip
 export MOD_ZIP_DIR="$(pwd)"/mod_zip
-cd nginx-1.9.2 && patch -p1 <../mod_zip.patch && dpkg-buildpackage -b
+cd nginx-1.* && patch -p1 <../mod_zip.patch && dpkg-buildpackage -b
 
 mkdir -p /debs
 cp ../*.deb /debs/

@@ -1,21 +1,14 @@
 diff --git a/debian/rules b/debian/rules
-index 34223d8..9621610 100755
+index 9ee8f8e..537366c 100755
 --- a/debian/rules
 +++ b/debian/rules
-@@ -81,6 +81,7 @@ full_configure_flags := \
- 			--with-mail \
- 			--with-mail_ssl_module \
- 			--with-threads \
-+			--add-module=$(MOD_ZIP_DIR) \
- 			--add-module=$(MODULESDIR)/nginx-auth-pam \
- 			--add-module=$(MODULESDIR)/nginx-dav-ext-module \
- 			--add-module=$(MODULESDIR)/nginx-echo \
-@@ -108,6 +109,7 @@ extras_configure_flags := \
- 			--with-stream \
- 			--with-stream_ssl_module \
- 			--with-threads \
-+			--add-module=$(MOD_ZIP_DIR) \
- 			--add-module=$(MODULESDIR)/headers-more-nginx-module \
- 			--add-module=$(MODULESDIR)/nginx-auth-pam \
- 			--add-module=$(MODULESDIR)/nginx-cache-purge \
-a
+@@ -73,7 +73,8 @@ common_configure_flags := \
+ 			--with-http_v2_module \
+ 			--with-http_dav_module \
+ 			--with-http_slice_module \
+-			--with-threads
++			--with-threads \
++                       --add-module=$(MOD_ZIP_DIR)
+ 
+ light_configure_flags := \
+ 			$(common_configure_flags) \
